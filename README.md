@@ -192,14 +192,18 @@ This is the script that is executed by the client test runner.
 
 If you look at the scripts, you'll see that there is an input variable step.inputs.u_query_selector.
 
+Add an input variable by scrolling to the bottom of the page, clicking the "New" button under the inputs related list.
+
 ![New Button](https://github.com/nidejesus/ATF-Test_Step-Configurations/blob/main/Images/new_button.JPG)
 
-Add an input variable by scrolling to the bottom of the page, clicking the "New" button under the inputs related list, and submit the form with the following values:
+Fill in the form with the following values and submit the form:
 
 - Type: String
 - Label: Query selector
 - Column name: u_query_selector
 - Max length: 100
+
+![Input Form](https://github.com/nidejesus/ATF-Test_Step-Configurations/blob/main/Images/input_form.jpg)
 
 Now you have a coded UI step configuration that you can use. We're going to do one more thing, and then we'll use it in a sample test.
 
