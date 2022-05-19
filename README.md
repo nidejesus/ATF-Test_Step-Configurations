@@ -192,7 +192,7 @@ This is the script that is executed by the client test runner.
 
 If you look at the scripts, you'll see that there is an input variable step.inputs.u_query_selector.
 
-![New Button](https://github.com/nidejesus/ATF-Test_Step-Configurations/blob/main/new_button.jpg?raw=true)
+![New Button](https://github.com/nidejesus/ATF-Test_Step-Configurations/blob/main/Images/new_button.JPG)
 
 Add an input variable by scrolling to the bottom of the page, clicking the "New" button under the inputs related list, and submit the form with the following values:
 
