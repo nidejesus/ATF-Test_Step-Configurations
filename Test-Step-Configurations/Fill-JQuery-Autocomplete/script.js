@@ -40,7 +40,7 @@
             // Get the uiElement
             var uiElement = testFrameWindow.jQuery(querySelector);
 
-            if (uiElement.length > 0 && uiElement.is(":visible") && !uiElement.is("[readonly]")) {
+            if (uiElement.length > 0 && uiElement.is(":visible") && !uiElement.is("[readonly]") && !uiElement.is("[disabled]")) {
                 uiElement.autocomplete("search", searchTerm); //Force the autocomplete box to open with the term <searchTerm> 
 
                 var searchSelector = '.ui-menu-item .ui-menu-item-wrapper:contains(' + searchTerm + ')';
@@ -68,7 +68,7 @@
             } else {
                 if (uiElement.length <= 0) updateStepResultMessage(formatMessage(messages[MESSAGE_KEY_UI_ELEMENT_NOT_FOUND], querySelector));
                 else if (!uiElement.is(":visible")) updateStepResultMessage(formatMessage(messages[MESSAGE_KEY_UI_ELEMENT_NOT_VISIBLE], querySelector));
-                else if (uiElement.is("[readonly]")) updateStepResultMessage(formatMessage(messages[MESSAGE_KEY_UI_ELEMENT_READ_ONLY], querySelector));
+                else if (uiElement.is("[readonly]") || uiElement.is("[disabled]")) updateStepResultMessage(formatMessage(messages[MESSAGE_KEY_UI_ELEMENT_READ_ONLY], querySelector));
                 failStep();
             }
 

@@ -43,7 +43,7 @@
             // Get the uiElement
             var uiElement = testFrameWindow.jQuery(querySelector);
             //verify element is found, visable, and editable
-            if (uiElement.length > 0 && uiElement.is(":visible") && !uiElement.is("[readonly]")) {
+            if (uiElement.length > 0 && uiElement.is(":visible") && !uiElement.is("[readonly]") && !uiElement.is("[disabled]")) {
                 //Set the elements value and force change event
                 uiElement.val(value).trigger("change");
 
@@ -55,7 +55,7 @@
             } else {
                 if (uiElement.length <= 0) updateStepResultMessage(formatMessage(messages[MESSAGE_KEY_UI_ELEMENT_NOT_FOUND], querySelector));
                 else if (!uiElement.is(":visible")) updateStepResultMessage(formatMessage(messages[MESSAGE_KEY_UI_ELEMENT_NOT_VISIBLE], querySelector));
-                else if (uiElement.is("[readonly]")) updateStepResultMessage(formatMessage(messages[MESSAGE_KEY_UI_ELEMENT_READ_ONLY], querySelector));
+                else if (uiElement.is("[readonly]") || uiElement.is("[disabled]")) updateStepResultMessage(formatMessage(messages[MESSAGE_KEY_UI_ELEMENT_READ_ONLY], querySelector));
                 failStep();
             }
 

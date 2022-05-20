@@ -40,7 +40,7 @@
             //Get html elemnt
             var uiElement = testFrameWindow.jQuery(querySelector);
             //check there is element and it is: visible, not read only, and clickable.
-            if (uiElement.length > 0 && uiElement.is(":visible") && !uiElement.is("[readonly]") && uiElement.click != undefined) {
+            if (uiElement.length > 0 && uiElement.is(":visible") && !uiElement.is("[readonly]") && !uiElement.is("[disabled]") && uiElement.click != undefined) {
 
                 // Click the uiElement 2 times 
                 if (isDoubleClick == true || isDoubleClick == "true") {
@@ -55,7 +55,7 @@
             } else {
                 if (uiElement.length <= 0) updateStepResultMessage(formatMessage(messages[MESSAGE_KEY_UI_ELEMENT_NOT_FOUND], querySelector));
                 else if (!uiElement.is(":visible")) updateStepResultMessage(formatMessage(messages[MESSAGE_KEY_UI_ELEMENT_NOT_VISIBLE], querySelector));
-                else if (uiElement.is("[readonly]")) updateStepResultMessage(formatMessage(messages[MESSAGE_KEY_UI_ELEMENT_READ_ONLY], querySelector));
+                else if (uiElement.is("[readonly]") || uiElement.is("[disabled]")) updateStepResultMessage(formatMessage(messages[MESSAGE_KEY_UI_ELEMENT_READ_ONLY], querySelector));
                 else if (uiElement.click == undefined) updateStepResultMessage(formatMessage(messages[MESSAGE_KEY_NO_CLICK_FUNCTION], querySelector));
                 failStep();
             }

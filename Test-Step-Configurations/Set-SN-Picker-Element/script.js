@@ -41,7 +41,7 @@
             var uiElement = testFrameWindow.jQuery(querySelector);
 
             // Verify element is found
-            if (uiElement.length > 0 && uiElement.is(":visible") && !uiElement.is("[readonly]")) {
+            if (uiElement.length > 0 && uiElement.is(":visible") && !uiElement.is("[readonly]") && !uiElement.is("[disabled]")) {
 
                 uiElement.keydown().val(searchTerm).click().keyup(); //set value to narrow search results
                 var searchSelector = 'li div.select2-result-label:contains(' + searchTerm + ')'; //selector for drowdown element
@@ -74,7 +74,7 @@
             } else {
                 if (uiElement.length <= 0) updateStepResultMessage(formatMessage(messages[MESSAGE_KEY_UI_ELEMENT_NOT_FOUND], querySelector));
                 else if (!uiElement.is(":visible")) updateStepResultMessage(formatMessage(messages[MESSAGE_KEY_UI_ELEMENT_NOT_VISIBLE], querySelector));
-                else if (uiElement.is("[readonly]")) updateStepResultMessage(formatMessage(messages[MESSAGE_KEY_UI_ELEMENT_READ_ONLY], querySelector));
+                else if (uiElement.is("[readonly]") || uiElement.is("[disabled]")) updateStepResultMessage(formatMessage(messages[MESSAGE_KEY_UI_ELEMENT_READ_ONLY], querySelector));
                 failStep();
             }
 
