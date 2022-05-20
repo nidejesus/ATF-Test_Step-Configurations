@@ -1,5 +1,11 @@
 # ATF-Test_Step-Configurations
 
+1. [Overview](#atf-test_step-configurations)
+2. [Creating Your First Custom UI Test Step](#creating-your-first-custom-ui-test-step)
+3. [Create UI Policy for Displaying the Timeout Field (Optional)](#create-ui-policy-for-displaying-the-timeout-field-optional)
+4. [Example Test](#create-a-test-that-uses-your-custom-test-step-optional)
+5. [Useful Selectors](#useful-selectors)
+
 In order to use the tests in the repository you will need do the following:
 
 - Copy an existing UI Step Configuration
@@ -7,7 +13,7 @@ In order to use the tests in the repository you will need do the following:
 - Create the inputs/outputs that the test step uses
 - Match any test step options
 
-If you have not copied a UI Step Configuration before you can follow the steps outlined by Cody in this <a href="https://community.servicenow.com/community?id=community_article&sys_id=fc312999db9f9cd09e691ea66896197e">aticle</a>. If you have done this becore you can simply copy that test step and use it as a base fore the code in this repo. For convienece the article was pasted [below](#creating-your-first-custom-ui-test-step).
+If you have not copied a UI Step Configuration before you can follow the steps outlined by Cody in this <a href="https://community.servicenow.com/community?id=community_article&sys_id=fc312999db9f9cd09e691ea66896197e">aticle</a>. If you have done this before you can simply copy that test step and use it as a base for the code in this repo. For convenience the article was pasted [below](#creating-your-first-custom-ui-test-step).
 
 # Creating Your First Custom UI Test Step
 
@@ -207,7 +213,7 @@ Fill in the form with the following values and submit the form:
 
 Now you have a coded UI step configuration that you can use. We're going to do one more thing, and then we'll use it in a sample test.
 
-## Create UI Policy for Displaying the Timeout Field (Optional)
+# Create UI Policy for Displaying the Timeout Field (Optional)
 
 Sometimes in your UI step configurations, you're going to want to specify a timeout. You can always do it by displaying the timeout field on the list view, but we'll create a UI policy to make it easier.
 
@@ -233,7 +239,7 @@ You will need to dot-walk to these fields. In the field list, click Show Related
 - Read only: Leave alone
   Now we'll be able to see the timeout field when we create test steps using our UI step configurations we create. We won't always need to use the field, but it will be available.
 
-## Create a test that uses your custom test step (Optional)
+# Create a test that uses your custom test step (Optional)
 
 We are going to create a test that goes to the incident list and clicks the personalize list icon to display the personalize list dialog and then closes the dialog.
 
@@ -261,3 +267,33 @@ Create a test with the following properties:
    Query selector: #cancel_button
 
 Run the test. You'll see the list appear. The Personalize List Columns dialog will appear and disappear, and the test will end.
+
+# Useful Selectors
+
+### :contains()
+
+Add this to any other normal selector to search for an element/elements that contain the given text.
+
+- input:contains("Submit")
+- #banner:contains("Success")
+- .container:contains("Forgot Password?") #password
+
+### ng-model
+
+Use the ng-model of an input to select the element. This can also be done with any other html attribute
+
+- input\[ng-model="c.data.email"]
+- textarea\[ng-model="data.comment"]\[ng-click="handleClick()"]
+
+### sn-atf-id
+
+You can add a sn-atf-id attribute to the element you are trying to select
+
+- input\[sn-atf-id="welcome-banner"]
+
+### Standard Selectors
+
+- #id
+- .class
+- element
+- .parent .child
