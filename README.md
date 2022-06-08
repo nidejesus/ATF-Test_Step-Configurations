@@ -202,7 +202,8 @@ Add an input variable by scrolling to the bottom of the page, clicking the "New"
 
 ![New Button](https://github.com/nidejesus/ATF-Test_Step-Configurations/blob/main/Images/new_button.JPG)
 
-**Note 
+**Note:
+
 You need to have the step configuration itself in the advanced view.
 
 You can do either of the following:
