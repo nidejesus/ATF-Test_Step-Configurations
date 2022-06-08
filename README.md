@@ -202,6 +202,15 @@ Add an input variable by scrolling to the bottom of the page, clicking the "New"
 
 ![New Button](https://github.com/nidejesus/ATF-Test_Step-Configurations/blob/main/Images/new_button.JPG)
 
+**Note 
+You need to have the step configuration itself in the advanced view.
+
+You can do either of the following:
+
+- Go to the Step configurations module and open the step configuration from the list view.
+    OR
+- Add the word advanced to the end of you URL when you load the step configuration and press Enter on your keyboard to reload the page. Assuming that the URL initially ends with "sysparm_view%3D", you'll add advanced and make it "sysparm_view%3Dadvanced".
+
 Fill in the form with the following values and submit the form:
 
 - Type: String
