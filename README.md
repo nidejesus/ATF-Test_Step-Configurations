@@ -198,19 +198,19 @@ This is the script that is executed by the client test runner.
 
 If you look at the scripts, you'll see that there is an input variable step.inputs.u_query_selector.
 
-Add an input variable by scrolling to the bottom of the page, clicking the "New" button under the inputs related list.
-
-![New Button](https://github.com/nidejesus/ATF-Test_Step-Configurations/blob/main/Images/new_button.JPG)
-
-**Note:
-
 You need to have the step configuration itself in the advanced view.
 
 You can do either of the following:
 
 - Go to the Step configurations module and open the step configuration from the list view.
-    OR
+
+OR
+
 - Add the word advanced to the end of you URL when you load the step configuration and press Enter on your keyboard to reload the page. Assuming that the URL initially ends with "sysparm_view%3D", you'll add advanced and make it "sysparm_view%3Dadvanced".
+
+Add an input variable by scrolling to the bottom of the page, clicking the "New" button under the inputs related list.
+
+![New Button](https://github.com/nidejesus/ATF-Test_Step-Configurations/blob/main/Images/new_button.JPG)
 
 Fill in the form with the following values and submit the form:
 
