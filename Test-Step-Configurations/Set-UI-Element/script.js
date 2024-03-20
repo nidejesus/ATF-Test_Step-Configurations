@@ -4,7 +4,8 @@
         var MESSAGE_KEY_NO_QUERY_SELECTOR_PROVIDED = "FAILURE: No query selector provided";
         var MESSAGE_KEY_NO_VALUE_PROVIDED = "FAILURE: No value provided";
         var MESSAGE_KEY_WAITING_FOR_TIMEOUT = "Waiting {0} seconds before completing the step";
-        var MESSAGE_KEY_UI_ELEMENT_NOT_FOUND = "Failure: No UI element matched the selector '{0}'.";
+        var MESSAGE_KEY_UI_ELEMENT_NOT_FOUND = "Failure: No UI element matched the selector '{0}' at the given index.";
+        var MESSAGE_KEY_NO_CLICK_FUNCTION = "Failure: The UI element that matched the selector '{0}' did not have a 'click' function.";
         var MESSAGE_KEY_SET_VALUE_SUCCESS = "The UI element that matched the selector '{0}' was successfully set.";
         var MESSAGE_KEY_UI_ELEMENT_NOT_VISIBLE = "Failure: UI element matched the selector '{0}' is not visible.";
         var MESSAGE_KEY_UI_ELEMENT_READ_ONLY = "The UI element that matched the selector '{0}' is read only.";
@@ -28,6 +29,7 @@
             failStep(messages[MESSAGE_KEY_NO_VALUE_PROVIDED]);
             return;
         }
+        
         // Check the input and fail if the index is NaN
         if (isNaN(parseInt(step.inputs.u_index_of_element))) {
             failStep(messages[MESSAGE_KEY_INDEX_NOT_A_NUMBER]);
@@ -49,7 +51,7 @@
             var uiElement;
 
             if(elementIndex || elementIndex === 0 ){
-                // Get the uiElement based on selector and the index of resulting search
+                // Get the uiElement based on selector and what index in the result it is
                 uiElement = testFrameWindow.jQuery(querySelector).eq(elementIndex);
             }else{
                 // Get the uiElement based only on selector
