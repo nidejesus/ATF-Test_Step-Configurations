@@ -11,16 +11,22 @@
 
 ## Inputs Variables
 
-_u_value_ is the value you want to set the element to.
+_Value_ is the value you want to set the element to.
 
 - Type: String
 - Label: Value
 - Column name: u_value
 - Max length: 100
 
-_Query Selector_ is the element that you want to click.
+_Query Selector_ is the element that you want to change the value of.
 
 - Type: String
 - Label: Query Selector
 - Column name: u_query_selector
 - Max length: 500
+
+_Index of Element_ is the index of the element that you want to select. If the query returns multiple results use this index to select the one you want.
+
+- Type: Integer
+- Label: Index of Element
+- Column name: u_index_of_element
